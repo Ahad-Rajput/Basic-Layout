@@ -37,19 +37,49 @@ body{
 
 #menu li{
     display: inline-block;
+    padding: 10px 12px;
 }
 
 #menu li a{
-    display: block;
-    padding: 10px 12px;
+    display: inline-block;
     text-decoration: none;
     color: black;
+    position: relative;
 }
 
-#menu li a:hover{
+#menu li a::after {
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    width: 0%;
+    height: 2px;
+    background-color:crimson;
+    content:"";
+    transition: width 0.7s;
+}
+
+#menu li a:hover:after {
+    width: 50%;
+}
+#menu li a::before {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color:crimson;
+    content:"";
+    transition: width 0.7s;
+}
+
+#menu li a:hover::before {
+    width: 50%;
+}
+
+/* #menu li a:hover{
     background-color:  crimson;
     color: white;
-}
+} */
 
 #content{
     width: 800px;
@@ -72,12 +102,16 @@ body{
     float: right;
     min-height: 400px;
     background-color: lightblue;
+    box-sizing: border-box;
+    padding:25px;
+    border: 1px solid black;
 }
 
 
 #sidebar a{
     text-decoration: none;
     color: black;
+    
 }
 
 #footer{
